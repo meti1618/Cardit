@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardit.</title>
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./iransans/fontiran.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+    <nav class="navbar">
+
+        <section class="navbar--logo">
+            <img id="navbarLogo" class="navbar--logo-img" src="./logo.png" alt=""/>
+            <img id="navbarAnimate" class="navbar--logo-animate" src="./logoActive.png" alt="">
+        </section>
+        <section class="navbar--toggler_mode">
+            <label id="switch" class="switch" >
+                    <input class="input" onchange="toggler_mode()" id="switcher" type="checkbox" >
+                    <span class="slider round"></span>
+            </label>
+        </section>
+    </nav>
+    
+    <main class="maincontent">
+        <section class="maincontent--header">
+            <h2 class="maincontent--header_title">
+                اگه تو هم در حفظ اطلاعات کارت بانکی خودت مشکل داری</br>
+                یا دوست داری اشتراک گذاری شون رو سریع تر کنی <br>  پس قراره مشتری فابریکه کاردیت بشی
+            </h2>
+            <div class="maincontent--header_emptycard">
+                <button id="btn_crt" onclick="openModal()" class="creator_button emptycard-button">+ <div id="tooltip">کلیک کن تا کاردیت بانک جدیدت رو بسازی</div></button>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <h5 class="footer_copyright-text">meti-frontend ©</h5>
+    </footer>
+
+    <div id="bgModal" class="bg_modal">
+        <form method="POST" id="modalForm" class="modal">
+            <nav class="modal--navbar">
+              <input class="modal--navbar-card_name" name="name" type="text" placeholder="نام و نام خانوادگی"  >
+              <img id="bankLogo" class="modal--navbar-logo" src="" alt="">  
+            </nav>
+            <main class="modal--main">
+                <input  name="cardNumber" class="modal--main-card_number" type="number" oninput= "nextinput( form , cardNumber , 4 , 0)" Pattern="/^-?\d+\.?\d*$/" ;>-
+                <input  name="cardNumber" class="modal--main-card_number" type="number" oninput= "nextinput( form , cardNumber , 4 , 1)" Pattern="/^-?\d+\.?\d*$/" ;>-
+                <input  name="cardNumber" class="modal--main-card_number" type="number" oninput= "nextinput( form , cardNumber , 4  , 2 )" Pattern="/^-?\d+\.?\d*$/" ;>-
+                <input  name="cardNumber" class="modal--main-card_number" type="number" oninput= "nextinput( form , cardNumber , 4 , 3)" Pattern="/^-?\d+\.?\d*$/" ;>
+            </main>
+            <footer class="modal--footer" >
+                <section class="modal--footer--sec">
+                    <input class="modal--footer--right_side-card_date" name="cardNumber" type="number" placeholder="سال"  pattern="/^-?\d+\.?\d*$/" oninput= "nextinput( form ,  cardNumber , 2 ,4) ">
+                    <input class="modal--footer--right_side-card_date" name="cardNumber" type="number" placeholder="ماه"  pattern="/^-?\d+\.?\d*$/" oninput= "nextinput( form ,  cardNumber , 2 ,5) ">
+                </section>
+                <input class="modal--footer--left_side-card_cvv" name="cardNumber" type="number" placeholder="cvv2"  pattern="/^-?\d+\.?\d*$/" oninput= "nextinput( form , cardNumber , 5 ,6)">
+            </footer>
+        </form>
+        <section class="modal--btns" >
+            <button onclick="exitModal()" class="modal--btns-exit_btn"> خروج </button>
+            <button id="saveBtn"class="modal--btns-save_btn"  >ذخیره </button>
+        </section>
+    </div>
+    <div id="bgModalED" class="bg_modal">
+        <form method="POST" id="modalFormED" class="modal">
+            <nav class="modal--navbar">
+              <input class="modal--navbar-card_name" name="name" type="text" placeholder="نام و نام خانوادگی"  >
+              <img id="bankLogoED" class="modal--navbar-logo" src="" alt="">  
+            </nav>
+            <main class="modal--main">
+                <input  name="cardNumber" class="modal--main-card_number" type="number" oninput= "nextinput(formED , cardNumber , 4 , 0)" Pattern="/^-?\d+\.?\d*$/" ;>-
+                <input  name="cardNumber" class="modal--main-card_number" type="number" oninput= "nextinput( formED ,  cardNumber , 4 , 1)" Pattern="/^-?\d+\.?\d*$/" ;>-
+                <input  name="cardNumber" class="modal--main-card_number" type="number" oninput= "nextinput( formED ,  cardNumber , 4  , 2 )" Pattern="/^-?\d+\.?\d*$/" ;>-
+                <input  name="cardNumber" class="modal--main-card_number" type="number" oninput= "nextinput( formED ,  cardNumber , 4 , 3)" Pattern="/^-?\d+\.?\d*$/" ;>
+            </main>
+            <footer class="modal--footer" >
+                <section class="modal--footer--sec">
+                    <input class="modal--footer--right_side-card_date" name="cardNumber" type="number" placeholder="سال"  pattern="/^-?\d+\.?\d*$/" oninput= "nextinput( formED ,   cardNumber , 2 ,4) ">
+                    <input class="modal--footer--right_side-card_date" name="cardNumber" type="number" placeholder="ماه"  pattern="/^-?\d+\.?\d*$/" oninput= "nextinput( formED ,   cardNumber , 2 ,5) ">
+                </section>
+                <input class="modal--footer--left_side-card_cvv" name="cardNumber" type="number" placeholder="cvv2"  pattern="/^-?\d+\.?\d*$/" oninput= "nextinput( formED ,  cardNumber , 5 ,6)">
+            </footer>
+        </form>
+        <section class="modal--btns" >
+            <button onclick="exitModalED()" class="modal--btns-exit_btn"> خروج </button>
+            <button id="saveBtnED"class="modal--btns-save_btn"  >ذخیره </button>
+        </section>
+    </div>
+    
+    <div id="cardListModal" class="bg_modal">
+        <button  onclick="cardListModalCloser()"id="btn_dlt" class="bg_modal--close_btn"><span class="bg_modal--close_btn-x">+</span></button>
+    </div>
+
+
+    <script src="./script_cardit.js"></script>
+</body>
+</html>
