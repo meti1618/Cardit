@@ -125,7 +125,7 @@ switch (varForm.cardNumber[0].value ) {
         break;    
     case '6274':
         bankLogo.setAttribute('src' , './banklogo//novin.png' );      
-          bankLogEDo.setAttribute('src' , './banklogo//novin.png' );
+          bankLogoED.setAttribute('src' , './banklogo//novin.png' );
         notWrong = true ;
     varForm.cardNumber[0].style.color = 'black'
         break;    
@@ -185,9 +185,9 @@ function  saveModal(){
 }
 function  saveModalED(){
     let test = String(saveBtnED.classList);
-     numid = test.replace(/[^0-9]/g,'');
+    numid = test.replace(/[^0-9]/g,'');
     bgModal3.style.display = 'none'
-    cardEditor( numid , bankLogoED.getAttribute('src'), formED.name.value , cardNED0 , cardNED1 ,cardNED2 ,cardNED3 ,cardNED4 ,cardNED5 ,cardNED6 ,formED.cardNumber[7] );
+    cardEditor(bankLogoED.getAttribute('src'), numid , formED.name.value , cardNED0 , cardNED1 ,cardNED2 ,cardNED3 ,cardNED4 ,cardNED5 ,cardNED6 ,formED.cardNumber[7] );
 }
 
 
@@ -199,7 +199,7 @@ function  saveModalED(){
 let idIndex = 0 ;  
 let numid ;
 function createCard(blogo , name , v1 , v2 , v3 ,v4 , v5 , v6 ,v7   ){
-    console.log(blogo ,name , v1 , v2 , v3 ,v4 , v5 , v6 , v7  )
+
 
     const section = document.createElement('section');
     const navbar = document.createElement('nav');
@@ -409,17 +409,6 @@ function cardDeleter(element){
     document.getElementById(`card${numid}`).remove()
 }
 
-
-/**function copyElementText(id) {
-    var text = document.getElementById(id).innerText;
-    var elem = document.createElement("textarea");
-    document.body.appendChild(elem);
-    elem.value = text;
-    elem.select();
-    document.execCommand("copy");
-    document.body.removeChild(elem);
-}
-**/
 function cardListOpener(){
     cardListModal.style.display = 'block'
 }
@@ -448,15 +437,12 @@ function openModalED(element) {
     formED.cardNumber[6].value = document.getElementById(`spanFA${numid}`).innerText
     formED.cardNumber[5].value = document.getElementById(`spanFB${numid}`).innerText    
     formED.cardNumber[4].value = document.getElementById(`spanFC${numid}`).innerText
-
-console.log(formED.cardNumber)
-
 } 
 
-function cardEditor(numid , blogo , name , v1 , v2 , v3 ,v4 , v5 , v6 ,v7   ){
+
+
+function cardEditor(blogoED , numid  , name , v1 , v2 , v3 ,v4 , v5 , v6 ,v7   ){
         bgModal3.style.display = 'none'
-        document.getElementById(`img${numid}`).setAttribute('src' , blogo );
-        document.getElementById(`h3${numid}`).innerText = name
         document.getElementById(`spanMA${numid}`).innerText = v4
         document.getElementById(`spanMB${numid}`).innerText = v3
         document.getElementById(`spanMC${numid}`).innerText = v2
@@ -464,9 +450,11 @@ function cardEditor(numid , blogo , name , v1 , v2 , v3 ,v4 , v5 , v6 ,v7   ){
         document.getElementById(`spanFA${numid}`).innerText = v7
         document.getElementById(`spanFB${numid}`).innerText = v6
         document.getElementById(`spanFC${numid}`).innerText = v5
+        document.getElementById(`img${numid}`).setAttribute('src' , blogoED)
+        document.getElementById(`h3${numid}`).innerText = name
+        saveBtnED.classList.remove(`sBtnED${numid}`)
+
 }
-
-
 
 
 /* toggler mode */
@@ -510,6 +498,3 @@ function toggler_mode(){
         
     
 }
-
-
-// Sweater Weather
