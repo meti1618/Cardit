@@ -70,6 +70,33 @@ input[type=number] {
   visibility: hidden;
 }
 
+.mass{
+  position:fixed;
+  bottom:0;
+  display: flex; 
+  align-self: center;
+  justify-self: center ;
+  flex-direction: column;
+  text-align: center;
+  background: #f1f1f1;
+  width:100%;
+  height:auto;
+  margin: auto;
+  padding:20px;
+  border:1px solid #888;
+  color:#777;
+  z-index:9999;
+}
+.mass--text{
+  color:rgb(182, 182, 182);
+}
+.dark_mode_mass{
+  background: rgba(0, 0, 0, 0.938) !important;
+  color:white;
+}
+.dark_mode_mass .mass--text{
+  color: rgb(113, 139, 223) ;
+}
 /*navbar style*/
 
 
@@ -571,19 +598,7 @@ input:checked + .slider:before {
 .card--contol_bar-edit:hover{
   color:rgb(0, 225, 255);
 }
-
-
-
-
-
-
-
-
-
 /* dark mode */
-
-
-
 .dark_mode_main_section{
   background: #000 !important;
   color:#ffffff !important;
