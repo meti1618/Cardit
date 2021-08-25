@@ -182,12 +182,16 @@ function  saveModal(){
     navbarAnimate.classList.add('active')
      navbarLogo.addEventListener('click', cardListOpener)
     createCard(bankLogo.getAttribute('src'), form.name.value , cardN0 , cardN1 ,cardN2 ,cardN3 ,cardN4 ,cardN5 ,cardN6 ,form.cardNumber[7] );
+    messenger(` ذخیره شد `, ` برای واردشدن به لیست کارت ها روی لوگو سایت کلیک کنید `)
+
 }
 function  saveModalED(){
     let test = String(saveBtnED.classList);
     numid = test.replace(/[^0-9]/g,'');
     bgModal3.style.display = 'none'
     cardEditor(bankLogoED.getAttribute('src'), numid , formED.name.value , cardNED0 , cardNED1 ,cardNED2 ,cardNED3 ,cardNED4 ,cardNED5 ,cardNED6 ,formED.cardNumber[7] );
+    messenger(` تغیرات ذخیره شد `, ` `)
+
 }
 
 
@@ -382,6 +386,7 @@ cvv2 :
     textErea.select();
     document.execCommand('copy');
     document.body.removeChild(textErea);
+    messenger(` کپی شد`, `هشدار! اطلاعات کامل کارت کپی شد `)
 }
 function cardCopyType2 (element){
     numid = String(element.id.match(/\d+/)) ;
@@ -403,10 +408,14 @@ function cardCopyType2 (element){
     textErea.select();
     document.execCommand('copy');
     document.body.removeChild(textErea);
+    messenger(` کپی شد`, ` `)
+
 }
 function cardDeleter(element){
     numid = String(element.id.match(/\d+/)) ;
     document.getElementById(`card${numid}`).remove()
+    messenger(` حذف شد`, ` `)
+
 }
 
 function cardListOpener(){
@@ -455,7 +464,22 @@ function cardEditor(blogoED , numid  , name , v1 , v2 , v3 ,v4 , v5 , v6 ,v7   )
         saveBtnED.classList.remove(`sBtnED${numid}`)
 
 }
-
+/* notification */
+const div = document.createElement('div');
+const h4 = document.createElement('h4');
+const p = document.createElement('p');
+div.classList.add('mass')
+div.id = 'mass'
+h4.classList.add('mass--title')
+p.classList.add('mass--text')
+function messenger(title,text){
+    h4.innerText = title
+    p.innerText = text
+    document.body.appendChild(div);
+    div.appendChild(h4);
+    div.appendChild(p);
+    window.setTimeout(function(){div.remove()},3000)
+}
 
 /* toggler mode */
 const switcher = document.getElementById("switcher")
@@ -495,6 +519,8 @@ function toggler_mode(){
         function themeChanger2 (element){
             element.classList.toggle('dark_mode_input');
         }
-        
-    
+        div.classList.toggle('dark_mode_mass')
+
 }
+
+
