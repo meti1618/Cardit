@@ -38,12 +38,17 @@ if(iname[iindex].value.length === Ilength) {
 }
 
 switch (varForm.cardNumber[0].value ) {
+    case '6393':
+        bankLogo.setAttribute('src' , './banklogo//pasargad.png' );        
+        bankLogoED.setAttribute('src' , './banklogo//pasargad.png' );
+        notWrong = true ;
+        varForm.cardNumber[0].style.color = 'black'
+        break;
     case '5892':
         bankLogo.setAttribute('src' , './banklogo//sepah.png' );
         bankLogoED.setAttribute('src' , './banklogo//sepah.png' );
         notWrong = true ;
         varForm.cardNumber[0].style.color = 'black'
-        notWrongED = true ;
         break;
     case '6062':
         bankLogo.setAttribute('src' , './banklogo//melal.ico' );      
@@ -51,39 +56,34 @@ switch (varForm.cardNumber[0].value ) {
         notWrong = true ;
         varForm.cardNumber[0].style.color = 'black'
         break;
-    case '6393':
-        bankLogo.setAttribute('src' , './banklogo//pasargad.png' );        
-        bankLogo.sEDetAttribute('src' , './banklogo//pasargad.png' );
-        notWrong = true ;
-        varForm.cardNumber[0].style.color = 'black'
-        break;
+
     case '5022':
         bankLogo.setAttribute('src' , './banklogo//pasargad.png' );        
-        bankLogo.sEDetAttribute('src' , './banklogo//pasargad.png' );
+        bankLogoED.setAttribute('src' , './banklogo//pasargad.png' );
         notWrong = true ;
         varForm.cardNumber[0].style.color = 'black'
         break;
     case '6221':
         bankLogo.setAttribute('src' , './banklogo//parsian.png' );        
-        bankLogo.EDsetAttribute('src' , './banklogo//parsian.png' );
+        bankLogoED.setAttribute('src' , './banklogo//parsian.png' );
         notWrong = true ;
         varForm.cardNumber[0].style.color = 'black'
         break;
     case '6391':
         bankLogo.setAttribute('src' , './banklogo//parsian.png' );        
-        bankLogo.EDsetAttribute('src' , './banklogo//parsian.png' );
+        bankLogoED.setAttribute('src' , './banklogo//parsian.png' );
         notWrong = true ;
         varForm.cardNumber[0].style.color = 'black'
         break;    
     case '6278':
         bankLogo.setAttribute('src' , './banklogo//parsian.png' );        
-        bankLogo.EDsetAttribute('src' , './banklogo//parsian.png' );
+        bankLogoED.setAttribute('src' , './banklogo//parsian.png' );
         notWrong = true ;
         varForm.cardNumber[0].style.color = 'black'
         break;    
     case '6273':
         bankLogo.setAttribute('src' , './banklogo//tejarat.png' );        
-        bankLogo.EDsetAttribute('src' , './banklogo//tejarat.png' );
+        bankLogoED.setAttribute('src' , './banklogo//tejarat.png' );
         notWrong = true ;
         varForm.cardNumber[0].style.color = 'black'
         break;
@@ -95,7 +95,7 @@ switch (varForm.cardNumber[0].value ) {
         break;
     case '5054':
     bankLogo.setAttribute('src' , './banklogo//gardeshgari.png' );    
-    bankLogo.setAEDttribute('src' , './banklogo//gardeshgari.png' );
+    bankLogo.setAttribute('src' , './banklogo//gardeshgari.png' );
     notWrong = true ;
     varForm.cardNumber[0].style.color = 'black'
         break;
@@ -107,7 +107,7 @@ switch (varForm.cardNumber[0].value ) {
         break;
     case '5057':
         bankLogo.setAttribute('src' , './banklogo//iranzamin.png' );        
-        bankLogo.seEDtAttribute('src' , './banklogo//iranzamin.png' );
+        bankLogo.setAttribute('src' , './banklogo//iranzamin.png' );
         notWrong = true ;
     varForm.cardNumber[0].style.color = 'black'
         break;
@@ -132,7 +132,7 @@ switch (varForm.cardNumber[0].value ) {
     case '5028':
         bankLogo.setAttribute('src' , './banklogo//shahr.png' );
         bankLogoED.setAttribute('src' , './banklogo//shahr.png' );
-        notWrongED = true ;
+        notWrong = true ;
         varForm.cardNumber[0].style.color = 'black'
         break;    
                                                                                                                                                    
